@@ -1,4 +1,4 @@
-import './ItemListContainer.scss'
+
 
 
 const ItemListContainer = ({section}) => {
