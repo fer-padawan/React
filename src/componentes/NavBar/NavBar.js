@@ -3,6 +3,7 @@ import { IconLogo, Menu, MenuItem, MenuItemLink, MobileIcon, NavBarContainer, Na
 import { GiBeerBottle } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from 'react-icons';
+import { ImCart } from "react-icons/im";
 
 export const NavBar = () => {
   return (
@@ -13,7 +14,8 @@ export const NavBar = () => {
 
                 <IconLogo>
                     <GiBeerBottle />
-                 Dios Verde Beer</IconLogo>
+                 Dios Verde Beer
+                 </IconLogo>
 
                  <MobileIcon>
                     <FaBars />
@@ -38,10 +40,16 @@ export const NavBar = () => {
                             <MenuItemLink>
                                 SHOP
                             </MenuItemLink>
+                            
                         </MenuItem>
                  </Menu>
+                 
+            <ImCart />
             </IconContext.Provider>
+            
+            
             </NavbarWrapper>
+
         </NavBarContainer>
 
     </>

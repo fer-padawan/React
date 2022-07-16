@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const NavBarContainer = styled.div`
 width: 100%;
 height: 80%;
@@ -85,6 +86,14 @@ transition: 0.5s all ease;
 @media screen and (max-width: 960px) {
     width: 100%
 }
+`;
+
+export const CartWidget = styled.div`
+        display: flex;
+        align-items: center;
+        color: #ebc08b;
+        font-size: 1.5rem;
+
 `;
 
 export const MobileIcon = styled.div`
