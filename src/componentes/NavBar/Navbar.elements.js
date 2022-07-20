@@ -16,7 +16,7 @@ padding: 20px;
 width: 100%;
 max-width: 1300px;
 height: 100%;
-align-item: center;
+align-items: center;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
@@ -26,7 +26,7 @@ export const IconLogo = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: flex-start;
-align-item: center;
+align-items: center;
 font-family: "Oswald";
 font-size: 1.2rem;
 color: #ebc08b;
@@ -59,15 +59,15 @@ height: 100%
 width: 100%;
 height:70px;
 display: flex;
-justify-content: ce;
-align-items: center;
+justify-content: center;
+align-items:center;
 }
 `;
 
 export const MenuItemLink = styled.a`
 display: flex;
 justify-content: center;
-align-item: center;
+align-items: center;
 height: 100%;
 padding: 0.5rem 2.5rem;
 color: #64b2ff;
