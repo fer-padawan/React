@@ -6,7 +6,6 @@ const ItemListproduct = ({data, action}) => {
 
     const [contador, setContador] = useState(1)
 
-    const{titulo, precio, } = data
 
     const addNumber = () => {
         setContador(contador+1)
@@ -18,17 +17,23 @@ const ItemListproduct = ({data, action}) => {
 
     return(
         <div className="item-producto">
+
+            <img src="https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg" />
             
-            <p>{titulo}</p>
-            <span>${precio}</span>
+            <p>{data?.titulo}</p>
+            <span>${data?.precio}</span>
             <div className="masProducto">
                 <button onClick={restNumber}>-</button>
                 <p>{contador}</p>
                 <button onClick={addNumber}>+</button>
             </div>
+            <span>${data?.stock}</span>
             <button onClick={action}>Agregar al carrito</button>
         </div>
+        
     )
 }
+
+
 
 export default ItemListproduct

@@ -6,21 +6,21 @@ const ItemListContainer = ({section}) => {
     const beer1 = {
         titulo: "Cerveza Strong",
         precio: 150,
-       // imagen: 'assets/img/Dark strong ale.jpg',
+        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg',
         stock: 10
     }
 
     const beer2 = {
         titulo: "Cerveza Strong",
         precio: 150,
-        //imagen: 'Darkstrongale.jpg',
+        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658369320/png-clipart-beer-stein-pint-glass-beer-glasses-oktoberfest-celebrations-glass-beer_xoetkg.png',
         stock: 10
     }
 
     const beer3 = {
         titulo: "Cerveza Strong",
         precio: 150,
-       // imagen: 'Darkstrongale.jpg',
+        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658369307/144-1446632_grab-a-beer-vaso-de-cerveza-png-transparent_cphexk.jpg',
         stock: 10
     }
 
