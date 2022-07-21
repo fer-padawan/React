@@ -18,7 +18,7 @@ const ItemListproduct = ({data, action}) => {
     return(
         <div className="item-producto">
 
-            <img src="https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg" />
+            <img src="https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg" alt="cerveza"/>
             
             <p>{data?.titulo}</p>
             <span>${data?.precio}</span>
