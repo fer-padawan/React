@@ -11,7 +11,7 @@ function App() {
 
   <ItemListContainer section= "Cervezas"/>
   <ItemListContainer section= "De Temporada"/>
-  <ItemListContainer section= "Mas Solicitados"/>
+  
     
      </div>
      

@@ -1,24 +1,31 @@
+/* eslint-disable no-undef */
 import { useState } from "react";
-
+import './ItemListProduct.css';
 
 
 const ItemListproduct = ({data, action}) => {
 
-    const [contador, setContador] = useState(1)
+    const [contador, setContador] = useState(0)
 
 
     const addNumber = () => {
-        setContador(contador+1)
+        if (data.stock > contador){
+        setContador (contador+1)
     }
+}
 
     const restNumber = () => {
+
+        if(contador>0){
         setContador (contador - 1)
     }
+
+}
 
     return(
         <div className="item-producto">
 
-            <img src="https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg" alt="cerveza"/>
+            <img src= {data?.imagen}  alt="cervezas" / >  
             
             <p>{data?.titulo}</p>
             <span>${data?.precio}</span>
@@ -27,7 +34,7 @@ const ItemListproduct = ({data, action}) => {
                 <p>{contador}</p>
                 <button onClick={addNumber}>+</button>
             </div>
-            <span>${data?.stock}</span>
+            <span>{data?.stock}</span>
             <button onClick={action}>Agregar al carrito</button>
         </div>
         

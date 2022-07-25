@@ -3,3 +3,9 @@ margin:0;
 padding: 0;
 box-sizing: border-box;
 }
+
+.main{
+    float: left;
+    width: 100%;
+    padding: 0 30px;
+}

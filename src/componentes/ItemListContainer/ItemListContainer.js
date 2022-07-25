@@ -1,5 +1,5 @@
 import ItemListproduct from "../ItemProduct/ItemListProduct"
-
+import './ItemListContainer.css'
 
 const ItemListContainer = ({section}) => {
 
@@ -20,7 +20,7 @@ const ItemListContainer = ({section}) => {
     const beer3 = {
         titulo: "Cerveza Strong",
         precio: 150,
-        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658369307/144-1446632_grab-a-beer-vaso-de-cerveza-png-transparent_cphexk.jpg',
+        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658365305/cld-sample-2.jpg',
         stock: 10
     }
 
