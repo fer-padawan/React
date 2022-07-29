@@ -1,41 +1,28 @@
 /* eslint-disable no-undef */
-import { useState } from "react";
+import React from 'react';
 import './ItemListProduct.css';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ItemCount from '../ItemCount/ItemCount';
+import Button from '@mui/material/Button';
 
 
-const ItemListproduct = ({data, action}) => {
+const ItemListproduct = ({data}) => {
 
-    const [contador, setContador] = useState(0)
-
-
-    const addNumber = () => {
-        if (data.stock > contador){
-        setContador (contador+1)
-    }
-}
-
-    const restNumber = () => {
-
-        if(contador>0){
-        setContador (contador - 1)
-    }
-
-}
+    const {titulo, precio, imagen, stock } = data
+   
 
     return(
         <div className="item-producto">
 
-            <img src= {data?.imagen}  alt="cervezas" / >  
+            <img src= {imagen}  alt="cervezas" / >  
             
-            <p>{data?.titulo}</p>
-            <span>${data?.precio}</span>
-            <div className="masProducto">
-                <button onClick={restNumber}>-</button>
-                <p>{contador}</p>
-                <button onClick={addNumber}>+</button>
-            </div>
-            <span>{data?.stock}</span>
-            <button onClick={action}>Agregar al carrito</button>
+            <p>{titulo}</p>
+            <span className='precio'>${precio}</span>
+            <ItemCount stock= {stock}></ItemCount>
+            <Button variant='outlined' endIcon={<ShoppingCartIcon/>}>
+            Agregar al carrito
+            </Button>
+
         </div>
         
     )

@@ -1,37 +1,41 @@
-import ItemListproduct from "../ItemProduct/ItemListProduct"
+
 import './ItemListContainer.css'
+import { useState, useEffect } from "react"
+import beer from "../../Utils/productos.mock"
+import Item from "../Item/item"
 
-const ItemListContainer = ({section}) => {
+const ItemListContainer = ({articulos}) => {
 
-    const beer1 = {
-        titulo: "Cerveza Strong",
-        precio: 150,
-        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658366773/Dark_strong_ale_rebvow.jpg',
-        stock: 10
-    }
+    const[article, setArticles] = useState([])
 
-    const beer2 = {
-        titulo: "Cerveza Strong",
-        precio: 150,
-        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658369320/png-clipart-beer-stein-pint-glass-beer-glasses-oktoberfest-celebrations-glass-beer_xoetkg.png',
-        stock: 10
-    }
+    const getBeer = () =>new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(beer)
+        },2000)
+    })
+      
+    useEffect(()=>{
+        const getBeer = async() =>{
+            try{
 
-    const beer3 = {
-        titulo: "Cerveza Strong",
-        precio: 150,
-        imagen: 'https://res.cloudinary.com/dqfply6ry/image/upload/v1658365305/cld-sample-2.jpg',
-        stock: 10
-    }
+                const responseLog = await getBeer()
+               
+                setArticles(responseLog)
 
-        const handleSubmit = () => {console.log("enviando info")}
+            }
+            catch(error){
 
+                console.log(error)
+
+            }
+        }
+    })
     return(
         <div className='list-products'>
-            <h2>{section}</h2>
-            <ItemListproduct data={beer1} action={handleSubmit}/>
-            <ItemListproduct data={beer2}/>
-            <ItemListproduct date={beer3}/>
+            <h2 className="name">{articulos}</h2>
+            <div className="ContainerItem">
+                <Item dataProduct={article}/>
+            </div>
             
         </div>
     )
