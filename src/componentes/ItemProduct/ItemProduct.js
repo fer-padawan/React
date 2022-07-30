@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 
 const ItemListproduct = ({data}) => {
 
-    const {titulo, precio, imagen, stock } = data
+    const { titulo, precio, imagen, stock } = data
    
 
     return(
