@@ -8,27 +8,28 @@ import AddIcon from '@mui/icons-material/Add';
 
 const ItemCount = ({stock}) => {
 
-    const [contador, setContador] = useState(0)
+    let initialStock = stock
+    const [contador, setContador] = useState(1)
 
 
-    const addNumber = () => {
-        if (stock > contador){
-        setContador (contador+1)
+    const addNumber = (i) => {
+        if (initialStock){
+        setContador (contador+i)
     }
 }
 
-    const restNumber = () => {
+/*    const restNumber = () => {
 
         if(contador>0){
         setContador (contador - 1)
     }
 
-}
+}*/
 return(
     <div className="masBoton">
-        <IconButton onClick={restNumber} size="small"> <RemoveIcon /> </IconButton>
-        <span className="cantidad"> {stock}</span>
-        <IconButton onClick={addNumber} size="small"> <AddIcon /> </IconButton> 
+        <IconButton onClick={()=>addNumber(-1)} size="small" disabled={contador ===1}> <RemoveIcon /> </IconButton>
+        <span className="cantidad"> {contador}</span>
+        <IconButton onClick={()=>addNumber(1)} size="small" disabled={contador === initialStock}> <AddIcon /> </IconButton> 
     </div>
 
 )
