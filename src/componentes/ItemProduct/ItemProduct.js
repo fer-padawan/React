@@ -1,17 +1,18 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import './ItemListProduct.css';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ItemCount from '../ItemCount/ItemCount';
-import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+
 
 
 const ItemListproduct = ({data}) => {
 
-    const { titulo, precio, imagen, stock } = data
+    const { id, titulo, precio, imagen, stock } = data
    
 
     return(
+        <Link style = {{textDecoration: "none", color: "black"}} to={`/beer/${id}`}>
         <div className="item-producto">
 
             <img src= {imagen}  alt="cervezas" / >  
@@ -19,11 +20,10 @@ const ItemListproduct = ({data}) => {
             <p>{titulo}</p>
             <span className='precio'>${precio}</span>
             <ItemCount stock= {stock}></ItemCount>
-            <Button variant='outlined' endIcon={<ShoppingCartIcon/>}>
-            Agregar al carrito
-            </Button>
+            
 
         </div>
+        </Link>
         
     )
 }

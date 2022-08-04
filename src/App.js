@@ -1,26 +1,27 @@
 import React from "react";
 import { NavBar } from "./componentes/NavBar/NavBar";
 import { ItemListContainer } from "./componentes/ItemListContainer/ItemListContainer";
-import ItemDetail from "./componentes/ItemDetail/ItemDetail";
+import Home from "./page/Home";
+import Cart from "./page/Cart";
+import Detail from "./page/Detail";
+import{BrowserRouter, Routes, Route} from 'react-router-dom'
 
 
 function App() {
   return (
-  <div className="container" >
-  <NavBar />
+  <BrowserRouter>
 
-    <div className="main">
+    <NavBar />
+    <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/category/:categoryid" element= {<ItemListContainer/>}/>
+    <Route path="/beer/:id" element={<Detail/>}/>
+    <Route path="/cart" element={<Cart/>}/>
 
-  <ItemListContainer article= "Cervezas"/>
-  <ItemListContainer article= "De Temporada"/>
- 
-  <ItemDetail/>
 
-    
-     </div>
-     
-  </div>
 
+    </Routes>
+  </BrowserRouter>
   );
 }
 

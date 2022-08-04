@@ -1,18 +1,19 @@
 import React from "react";
 
 import "./ItemListContainer.css";
-
 import { useState, useEffect } from "react";
-
 import beer from "../../Utils/productos.mock";
-
 import ItemList from "../ItemList/ItemList";
+import { useParams } from 'react-router-dom';
 
 
 
 export function ItemListContainer({ article }) {
 
   const [listBeer, setlistBeer] = useState([]);
+  const{categotyid} = useParams()
+  const filterByCategory = beer.filter((beer) => beer.category === categotyid)
+
 
   const getProducts = () =>
 
@@ -20,11 +21,19 @@ export function ItemListContainer({ article }) {
 
       setTimeout(() => {
 
-        resolve(beer);
+        if(categotyid === "Cervezas" || categotyid === "De temporada"){
 
-      }, 2000);
+        resolve(filterByCategory);
+      }
 
-    });
+      else{
+        resolve (beer)
+      }
+
+      }, 2000)
+
+    })
+    
 
   useEffect(() => {
 

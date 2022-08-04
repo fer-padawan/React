@@ -1,11 +1,13 @@
-
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import Button from '@mui/material/Button';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 
 
 const ItemDetail = ({product}) => {
     const {titulo, precio, img, stock}= product
+
+    const [quantitySelected, setquantitySelected]= useState(0)
     return(
         <>
             <img src={img} alt=""/>
@@ -13,11 +15,16 @@ const ItemDetail = ({product}) => {
                 <h2>{titulo}</h2>
                 <span className="precio">${precio}</span>
                 <span className="stock"> Stock Disponible</span>
-                <ItemCount stock={stock}/>
-                <Button variant="outlined" endIcon={<ShoppingCartIcon/>}>
-                    Agregar al carrito
-                </Button>
-            </div>
+
+                {console.log("quantitySelected:",quantitySelected)}
+
+                {
+                    quantitySelected>1?<Button><Link to ="/cart">Comprar</Link></Button>:
+                    <ItemCount stock={stock} setQuantitySelected= {setquantitySelected}/>
+                }
+
+                </div>
+                
         </>
     )
 }

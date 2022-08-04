@@ -1,33 +1,43 @@
 import beer from "../../Utils/productos.mock";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+
 
 const ItemDetailContainer = () =>{
 
     const [Beer, setBeer] = useState([])
-    const [isBeer, setIsbeer] = useState(true)
+    const {id} =useParams()
+    const filterId = beer.filter((beer) => beer.id ===Number(id))
     
     const getItem = new Promise((resolve, reject) => {
         setTimeout(()=>{
-            resolve(beer)
+            resolve(filterId[0])
         },2000)
     })
+
     useEffect(()=>{
-        getItem
-        .then((res)=>{
-            setBeer(res)
-            setIsbeer(false)
-        })
+        const ItemAwait = async() =>{
+        try{
+            const responseLog = await getItem()
+            setBeer(responseLog)
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+        
+        ItemAwait()
     },[])
 
-    if (isBeer){
-        return <div> Sirviendo ...</div>
-    }
+    
 
     return(
-        <>
-            <ItemDetail data={Beer[0]} />
-        </>
+    
+        <div className="item-detail-container" >
+        <ItemDetail product={Beer} />
+        </div>
+        
     )
 }
 

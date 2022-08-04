@@ -7,6 +7,8 @@ import { ImCart } from "react-icons/im";
 
 
 export const NavBar = () => {
+
+    
   return (
     <>
         <NavBarContainer>
